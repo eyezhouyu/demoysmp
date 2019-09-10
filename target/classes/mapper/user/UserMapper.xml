@@ -82,7 +82,7 @@
         <if test="id!=null and id!=''">
             and id=#{id,jdbcType=VARCHAR}
         </if>
-        <if test="userName != null">and username LIKE '%${username}%'</if>
+        <if test="userName != null">and user_name LIKE '%${userName}%'</if>
         <if test="password != null">and password= #{password,jdbcType=VARCHAR}</if>
         <if test="status != null">and status= #{status,jdbcType=VARCHAR}</if>
         <if test="email != null">and email= #{email,jdbcType=VARCHAR}</if>

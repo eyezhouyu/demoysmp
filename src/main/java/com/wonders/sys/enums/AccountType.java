@@ -4,8 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 public enum AccountType {
-    DOCTOR("1"),
-    PATIENT("2");
+    DOCTOR("0"),
+    PATIENT("1");
 
     @Getter@Setter
     private String type;

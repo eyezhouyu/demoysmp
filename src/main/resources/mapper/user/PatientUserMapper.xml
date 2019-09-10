@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wonders.business.user.dao.PatientUserDao">
+    <!--auto generated Code-->
+    <resultMap id="BaseResultMap" type="com.wonders.business.user.model.PatientUser">
+        <result column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="user_id" property="userName" jdbcType="VARCHAR"/>
+        <result column="hzgx" property="hzgx" jdbcType="VARCHAR"/>
+        <result column="hbsc" property="hbsc" jdbcType="VARCHAR"/>
+        <result column="sfjz" property="sfjz" jdbcType="VARCHAR"/>
+        <result column="jzyymc" property="jzyymc" jdbcType="VARCHAR"/>
+        <result column="jzksmc" property="jzksmc" jdbcType="VARCHAR"/>
+        <result column="ywbqzp" property="ywbqzp" jdbcType="VARCHAR"/>
+        <result column="sfzzsyyw" property="sfzzsyyw" jdbcType="VARCHAR"/>
+        <result column="ywmc" property="ywmc" jdbcType="VARCHAR"/>
+        <result column="ywzp" property="ywzp" jdbcType="VARCHAR"/>
+        <result column="sfyzdjbs" property="sfyzdjbs" jdbcType="VARCHAR"/>
+        <result column="zdgwbsms" property="zdgwbsms" jdbcType="VARCHAR"/>
+        <result column="sfygms" property="sfygms" jdbcType="VARCHAR"/>
+        <result column="gmyw" property="gmyw" jdbcType="VARCHAR"/>
+        <result column="bqms" property="bqms" jdbcType="VARCHAR"/>
+        <result column="bqzp" property="bqzp" jdbcType="VARCHAR"/>
+        <result column="bqzp_2" property="bqzp_2" jdbcType="VARCHAR"/>
+        <result column="examine" property="examine" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="creator" property="creator" jdbcType="VARCHAR"/>
+        <result column="update_user" property="updateUser" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO ys_mp_user_patient (
+        id,
+        user_id,
+        hzgx,
+        hbsc,
+        sfjz,
+        jzyymc,
+        jzksmc,
+        ywbqzp,
+        sfzzsyyw,
+        ywmc,
+        ywzp,
+        sfyzdjbs,
+        zdgwbsms,
+        sfygms,
+        gmyw,
+        bqms,
+        bqzp,
+        bqzp_2,
+        examine,
+        create_time,
+        update_time,
+        creator,
+        update_user
+        ) VALUES (
+            #{id,jdbcType=VARCHAR},
+            #{user_id,jdbcType=VARCHAR},
+            #{hzgx,jdbcType=VARCHAR},
+            #{hbsc,jdbcType=VARCHAR},
+            #{sfjz,jdbcType=VARCHAR},
+            #{jzyymc,jdbcType=VARCHAR},
+            #{jzksmc,jdbcType=VARCHAR},
+            #{ywbqzp,jdbcType=VARCHAR},
+            #{sfzzsyyw,jdbcType=VARCHAR},
+            #{ywmc,jdbcType=VARCHAR},
+            #{ywzp,jdbcType=VARCHAR},
+            #{sfyzdjbs,jdbcType=VARCHAR},
+            #{zdgwbsms,jdbcType=VARCHAR},
+            #{sfygms,jdbcType=VARCHAR},
+            #{gmyw,jdbcType=VARCHAR},
+            #{bqms,jdbcType=VARCHAR},
+            #{bqzp,jdbcType=TIMESTAMP},
+            #{bqzp_2,jdbcType=TIMESTAMP},
+            #{examine,jdbcType=TIMESTAMP},
+            #{createTime,jdbcType=TIMESTAMP},
+            #{updateTime,jdbcType=TIMESTAMP},
+            #{creator,jdbcType=VARCHAR},
+            #{updateUser,jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="updateByPrimaryKeySelective">
+        UPDATE ys_mp_user_patient
+        <set>
+            <if test="hzgx != null"> hzgx= #{hzgx,jdbcType=VARCHAR},</if>
+            <if test="hbsc != null"> hbsc= #{hbsc,jdbcType=VARCHAR},</if>
+            <if test="sfjz != null"> sfjz= #{sfjz,jdbcType=VARCHAR},</if>
+            <if test="jzyymc != null"> jzyymc= #{jzyymc,jdbcType=VARCHAR},</if>
+            <if test="jzksmc != null"> jzksmc= #{jzksmc,jdbcType=VARCHAR},</if>
+            <if test="ywbqzp != null"> ywbqzp= #{ywbqzp,jdbcType=VARCHAR},</if>
+            <if test="sfzzsyyw != null"> sfzzsyyw= #{sfzzsyyw,jdbcType=VARCHAR},</if>
+            <if test="ywmc != null"> ywmc= #{ywmc,jdbcType=VARCHAR},</if>
+            <if test="ywzp != null"> ywzp= #{ywzp,jdbcType=VARCHAR},</if>
+            <if test="sfyzdjbs != null"> sfyzdjbs= #{sfyzdjbs,jdbcType=VARCHAR},</if>
+            <if test="zdgwbsms != null"> zdgwbsms= #{zdgwbsms,jdbcType=VARCHAR},</if>
+            <if test="sfygms != null"> sfygms= #{sfygms,jdbcType=VARCHAR},</if>
+            <if test="gmyw != null"> gmyw= #{gmyw,jdbcType=VARCHAR},</if>
+            <if test="bqms != null"> bqms= #{bqms,jdbcType=VARCHAR},</if>
+            <if test="bqzp != null"> bqzp= #{bqzp,jdbcType=VARCHAR},</if>
+            <if test="bqzp_2 != null"> bqzp_2= #{bqzp_2,jdbcType=VARCHAR},</if>
+            <if test="examine != null"> examine= #{examine,jdbcType=VARCHAR},</if>
+            <if test="createTime != null"> create_time= #{createTime,jdbcType=TIMESTAMP},</if>
+            <if test="updateTime != null"> update_time= #{updateTime,jdbcType=TIMESTAMP},</if>
+            <if test="creator != null"> creator= #{creator,jdbcType=VARCHAR},</if>
+            <if test="updateUser != null"> update_user= #{updateUser,jdbcType=VARCHAR},</if>
+        </set>
+        WHERE id = #{id,jdbcType=VARCHAR}
+    </update>
+
+    <select id="findByModel" resultMap="BaseResultMap">
+        select
+        *
+        from ys_mp_user_patient
+        where 1=1
+        <if test="userId!=null and userId!=''">
+            and user_id=#{userId,jdbcType=VARCHAR}
+        </if>
+    </select>
+</mapper>
+
