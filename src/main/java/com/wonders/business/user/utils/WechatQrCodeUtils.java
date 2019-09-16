@@ -38,7 +38,6 @@ public class WechatQrCodeUtils {
         ResponseEntity<byte[]> responseEntity = RequestUtils.httpRequest("https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode?access_token="+accessToken,params,null, HttpMethod.POST,byte[].class);
         byte[] qrcodeBytes = responseEntity.getBody();
         response.setContentType("image/jpeg");
-
 //        CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 //        HttpPost httpPost = new HttpPost("https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode?access_token="+accessToken);
 //        httpPost.addHeader(HTTP.CONTENT_TYPE, "application/json");
