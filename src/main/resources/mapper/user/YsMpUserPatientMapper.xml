@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wonders.business.user.dao.YsMpUserPatientDao" >
+  <resultMap id="BaseResultMap" type="com.wonders.business.user.model.YsMpUserPatient" >
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="hzgx" property="hzgx" jdbcType="VARCHAR" />
+    <result column="hbsc" property="hbsc" jdbcType="VARCHAR" />
+    <result column="sfjz" property="sfjz" jdbcType="VARCHAR" />
+    <result column="jzyymc" property="jzyymc" jdbcType="VARCHAR" />
+    <result column="jzksmc" property="jzksmc" jdbcType="VARCHAR" />
+    <result column="sfzzsyyw" property="sfzzsyyw" jdbcType="VARCHAR" />
+    <result column="ywmc" property="ywmc" jdbcType="VARCHAR" />
+    <result column="sfyzdjbs" property="sfyzdjbs" jdbcType="VARCHAR" />
+    <result column="zdgwbsms" property="zdgwbsms" jdbcType="VARCHAR" />
+    <result column="sfygms" property="sfygms" jdbcType="VARCHAR" />
+    <result column="gmyw" property="gmyw" jdbcType="VARCHAR" />
+    <result column="bqms" property="bqms" jdbcType="VARCHAR" />
+    <result column="examine" property="examine" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="creator" property="creator" jdbcType="VARCHAR" />
+    <result column="update_user" property="updateUser" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Column_List" >
+    id, user_id, hzgx,      hbsc, sfjz, jzyymc, jzksmc, sfzzsyyw, ywmc,
+      sfyzdjbs, zdgwbsms, sfygms,      gmyw, bqms, examine,      create_time, update_time, creator,
+      update_user, ywbqzp, ywzp,      bqzp, bqzp_2
+  </sql>
+
+  <insert id="insert" parameterType="com.wonders.business.user.model.YsMpUserPatient" >
+    insert into ys_mp_user_patient (id, user_id, hzgx, 
+      hbsc, sfjz, jzyymc, 
+      jzksmc, sfzzsyyw, ywmc, 
+      sfyzdjbs, zdgwbsms, sfygms, 
+      gmyw, bqms, examine, 
+      create_time, update_time, creator, 
+      update_user, ywbqzp, ywzp, 
+      bqzp, bqzp_2)
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{hzgx,jdbcType=VARCHAR}, 
+      #{hbsc,jdbcType=VARCHAR}, #{sfjz,jdbcType=VARCHAR}, #{jzyymc,jdbcType=VARCHAR}, 
+      #{jzksmc,jdbcType=VARCHAR}, #{sfzzsyyw,jdbcType=VARCHAR}, #{ywmc,jdbcType=VARCHAR}, 
+      #{sfyzdjbs,jdbcType=VARCHAR}, #{zdgwbsms,jdbcType=VARCHAR}, #{sfygms,jdbcType=VARCHAR}, 
+      #{gmyw,jdbcType=VARCHAR}, #{bqms,jdbcType=VARCHAR}, #{examine,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}, 
+      #{updateUser,jdbcType=VARCHAR}, #{ywbqzp,jdbcType=LONGVARBINARY}, #{ywzp,jdbcType=LONGVARBINARY}, 
+      #{bqzp,jdbcType=LONGVARBINARY}, #{bqzp2,jdbcType=LONGVARBINARY})
+  </insert>
+
+  <select id="findYsMpUserPatientList" resultMap="BaseResultMap"  parameterType="com.wonders.business.user.param.PatientParam" >
+    select
+      patient.*
+    from ys_mp_user_patient  patient
+    left join     ys_mp_doctor_patient   doctorPatient  on  doctorPatient.patient_id=patient.id
+
+    <where>
+      <if test=" doctorId !=null and doctorId  != '' ">
+        and  doctorPatient.doctor_Id =  #{doctorId}
+      </if>
+
+    </where>
+
+  </select>
+
+</mapper>
