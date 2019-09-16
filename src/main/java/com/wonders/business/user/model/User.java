@@ -31,5 +31,6 @@ public class User extends BaseModel{
     private String unionId;
     private String openId;
     private AccountStatus status;
-    private AccountType userType;
+    private AccountType type;
+    private String userType;
 }

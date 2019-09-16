@@ -7,7 +7,7 @@
         <result column="user_name" property="userName" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
         <result column="status" property="status" jdbcType="VARCHAR"/>
-        <result column="user_type" property="type" jdbcType="VARCHAR"/>
+        <result column="user_type" property="userType" jdbcType="VARCHAR"/>
         <result column="user_icon" property="userIcon" jdbcType="VARCHAR"/>
         <result column="nick_name" property="nickName" jdbcType="VARCHAR"/>
         <result column="email" property="email" jdbcType="VARCHAR"/>
@@ -60,7 +60,7 @@
             <if test="userName != null"> user_name= #{userName,jdbcType=VARCHAR},</if>
             <if test="password != null"> password= #{password,jdbcType=VARCHAR},</if>
             <if test="status != null"> status= #{status,jdbcType=VARCHAR},</if>
-            <if test="userIcon != null"> user_icon= #{userIcon,jdbcType=VARCHAR},</if>
+            <if test="userType != null"> user_type= #{userType,jdbcType=VARCHAR},</if>
             <if test="nickName != null"> nick_name= #{nickName,jdbcType=VARCHAR},</if>
             <if test="email != null"> email= #{email,jdbcType=VARCHAR},</if>
             <if test="phone != null"> phone= #{phone,jdbcType=VARCHAR},</if>
