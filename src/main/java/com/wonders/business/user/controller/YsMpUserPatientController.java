@@ -50,8 +50,8 @@ public class YsMpUserPatientController {
     }
 
 
-    @RequestMapping(value = "save")
-    @ResponseBody
+    @ApiOperation(value = "保存患者")
+    @PostMapping("/save")
     public Map<String, Object> save(@Valid @RequestBody YsMpUserPatient ysMpUserPatient, HttpServletRequest request, HttpServletResponse response  ) {
         Map<String, Object> resultMap = new HashMap();
         try{
